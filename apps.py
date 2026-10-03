@@ -1,3 +1,4 @@
+from apps import app
 from flask import Flask, render_template, request, session, redirect
 import mysql.connector
 
