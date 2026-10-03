@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Admin Dashboard - Cloud Food Ordering</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+```
+<header>
+    <h1>👨‍💼 Admin Dashboard</h1>
+</header>
+
+<section class="cart">
+
+    <h2>📦 All Customer Orders</h2>
+
+    {% if orders %}
+
+        {% for order in orders %}
+
+            <div class="cart-item">
+
+                <h2>📦 Order #{{ order.id }}</h2>
+
+                <p>
+                    <strong>👤 Customer:</strong>
+                    {{ order.name }}
+                </p>
+
+                <p>
+                    <strong>📧 Email:</strong>
+                    {{ order.email }}
+                </p>
+
+                <p>
+                    <strong>💰 Total:</strong>
+                    ₹{{ order.total }}
+                </p>
+
+                <p>
+                    <strong>📍 Delivery Address:</strong>
+                </p>
+
+                <p>
+                    {{ order.delivery_address }}
+                </p>
+
+                <p>
+                    <strong>📅 Order Date:</strong>
+                    {{ order.date }}
+                </p>
+
+                <p>
+                    <strong>🚚 Current Status:</strong>
+                    {{ order.status }}
+                </p>
+
+                <form method="POST" action="/admin/update_status">
+
+                    <input
+                        type="hidden"
+                        name="order_id"
+                        value="{{ order.id }}"
+                    >
+
+                    <select name="status">
+
+                        <option value="Pending"
+                            {% if order.status == "Pending" %}selected{% endif %}>
+                            Pending
+                        </option>
+
+                        <option value="Preparing"
+                            {% if order.status == "Preparing" %}selected{% endif %}>
+                            Preparing
+                        </option>
+
+                        <option value="Out for Delivery"
+                            {% if order.status == "Out for Delivery" %}selected{% endif %}>
+                            Out for Delivery
+                        </option>
+
+                        <option value="Delivered"
+                            {% if order.status == "Delivered" %}selected{% endif %}>
+                            Delivered
+                        </option>
+
+                    </select>
+
+                    <button type="submit">
+                        Update Status
+                    </button>
+
+                </form>
+
+            </div>
+
+            <br>
+
+        {% endfor %}
+
+    {% else %}
+
+        <p>No orders have been placed yet.</p>
+
+    {% endif %}
+
+    <br>
+
+    <button onclick="window.location.href='/admin/add_food'">
+    ➕ Add Food
+    </button>
+
+     <button onclick="window.location.href='/admin/edit_food'">
+            ✏️ Edit Food
+        </button>
+
+    <button onclick="window.location.href='/'">
+        🏠 Home
+    </button>
+
+    <button onclick="window.location.href='/logout'">
+        🚪 Logout
+    </button>
+
+</section>
+```
+
+</body>
+</html>

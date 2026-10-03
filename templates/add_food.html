@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Add Food - Cloud Food Ordering</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+```
+<header>
+    <h1>➕ Add New Food</h1>
+</header>
+
+<section class="register">
+
+    <h2>Food Details</h2>
+
+    <form method="POST" action="/admin/add_food">
+
+        <input
+            type="text"
+            name="name"
+            placeholder="Food Name"
+            required
+        >
+
+        <br><br>
+
+        <input
+            type="text"
+            name="category"
+            placeholder="Category"
+            required
+        >
+
+        <br><br>
+
+        <input
+            type="number"
+            name="price"
+            placeholder="Price"
+            step="0.01"
+            required
+        >
+
+        <br><br>
+
+        <input
+            type="text"
+            name="image"
+            placeholder="Image filename, e.g. pizza.jpg"
+            required
+        >
+
+        <br><br>
+
+        <textarea
+            name="description"
+            rows="5"
+            placeholder="Food Description"
+            required
+        ></textarea>
+
+        <br><br>
+
+        <button type="submit">
+            ➕ Add Food
+        </button>
+
+    </form>
+
+    <br>
+
+    <button onclick="window.location.href='/admin'">
+        ⬅️ Back to Admin
+    </button>
+
+</section>
+```
+
+</body>
+</html>

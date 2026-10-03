@@ -1,0 +1,611 @@
+
+/* =========================================================
+   CLOUD FOOD - PREMIUM FOOD DELIVERY UI
+   Frontend only - no backend changes required
+========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    margin: 0;
+    background: #f8fafc;
+    color: #1e293b;
+    text-align: center;
+}
+
+
+/* =========================================================
+   HEADER / NAVBAR
+========================================================= */
+
+header {
+    background: linear-gradient(135deg, #ff6b35, #ff3d00);
+    color: white;
+    padding: 18px 30px;
+    box-shadow: 0 5px 20px rgba(255, 61, 0, 0.18);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header h1 {
+    margin: 0 0 14px;
+    font-size: 32px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 7px;
+}
+
+nav button {
+    margin: 2px;
+    padding: 10px 18px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 25px;
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.13);
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
+    transition: all 0.25s ease;
+}
+
+nav button:hover {
+    background: white;
+    color: #ff4d1f;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.12);
+}
+
+
+/* =========================================================
+   WELCOME / HERO
+========================================================= */
+
+.welcome {
+    padding: 75px 20px 60px;
+    background:
+        radial-gradient(
+            circle at top right,
+            rgba(255, 107, 53, 0.12),
+            transparent 35%
+        ),
+        linear-gradient(180deg, #ffffff, #fffaf7);
+}
+
+.welcome h2 {
+    font-size: 46px;
+    margin: 0 0 14px;
+    color: #0f172a;
+    font-weight: 850;
+    letter-spacing: -1px;
+}
+
+.welcome p {
+    font-size: 18px;
+    color: #64748b;
+    margin: 0 auto;
+    max-width: 680px;
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   MENU
+========================================================= */
+
+.menu {
+    padding: 48px 25px 80px;
+}
+
+.menu > h2 {
+    font-size: 34px;
+    color: #0f172a;
+    margin: 0 0 38px;
+    font-weight: 800;
+}
+
+.food-container {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 28px;
+    flex-wrap: wrap;
+}
+
+
+/* =========================================================
+   FOOD CARDS
+========================================================= */
+
+.food-card {
+    background: #ffffff;
+    width: 270px;
+    padding: 0 0 23px;
+    border-radius: 20px;
+    box-shadow: 0 7px 25px rgba(15, 23, 42, 0.07);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #eef2f7;
+    position: relative;
+}
+
+.food-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 18px 40px rgba(15, 23, 42, 0.13);
+}
+
+.food-card img {
+    width: 100%;
+    height: 185px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.food-card:hover img {
+    transform: scale(1.04);
+}
+
+.food-card h3 {
+    font-size: 21px;
+    margin: 18px 16px 8px;
+    color: #0f172a;
+    font-weight: 750;
+}
+
+.food-card p {
+    color: #64748b;
+    margin: 8px 16px;
+    line-height: 1.5;
+}
+
+.food-card h4 {
+    font-size: 22px;
+    color: #ff4d1f;
+    margin: 15px 16px;
+    font-weight: 800;
+}
+
+.food-card button {
+    background: linear-gradient(135deg, #ff6b35, #ff3d00);
+    color: white;
+    border: none;
+    padding: 11px 25px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 700;
+    transition: all 0.25s ease;
+}
+
+.food-card button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 7px 18px rgba(255, 77, 31, 0.3);
+}
+
+
+/* =========================================================
+   CART PAGE
+========================================================= */
+
+.cart {
+    padding: 50px 20px 80px;
+    max-width: 850px;
+    margin: auto;
+}
+
+.cart h2 {
+    font-size: 36px;
+    color: #0f172a;
+    margin-bottom: 35px;
+    font-weight: 800;
+}
+
+.cart-item {
+    background: white;
+    width: min(650px, 94%);
+    margin: 18px auto;
+    padding: 23px;
+    border-radius: 18px;
+    box-shadow: 0 6px 22px rgba(15, 23, 42, 0.07);
+    border: 1px solid #eef2f7;
+    text-align: left;
+    transition: transform 0.2s ease;
+}
+
+.cart-item:hover {
+    transform: translateY(-2px);
+}
+
+.cart-item h3 {
+    font-size: 21px;
+    margin: 0 0 10px;
+    color: #0f172a;
+}
+
+.cart-item p {
+    color: #64748b;
+    margin: 7px 0;
+}
+
+#cart-total {
+    font-size: 27px;
+    font-weight: 850;
+    color: #ff4d1f;
+    margin: 30px;
+}
+
+
+/* =========================================================
+   DELIVERY ADDRESS
+========================================================= */
+
+.delivery-address {
+    width: min(650px, 94%);
+    margin: 25px auto;
+    padding: 22px 24px;
+    background: linear-gradient(135deg, #fff7f2, #ffffff);
+    border: 1px solid #ffd8ca;
+    border-radius: 18px;
+    text-align: left;
+    box-shadow: 0 5px 18px rgba(255, 77, 31, 0.07);
+}
+
+.delivery-address h3 {
+    margin: 0 0 8px;
+    color: #0f172a;
+    font-size: 19px;
+}
+
+.delivery-address p {
+    margin: 5px 0;
+    color: #64748b;
+    line-height: 1.5;
+}
+
+.delivery-address button {
+    margin-top: 10px;
+    padding: 8px 15px;
+    border: 1px solid #ff6b35;
+    background: white;
+    color: #ff4d1f;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   CHECKOUT / MAIN ACTION BUTTON
+========================================================= */
+
+.cart > button,
+button[type="submit"] {
+    background: linear-gradient(135deg, #ff6b35, #ff3d00);
+    color: white;
+    border: none;
+    padding: 13px 30px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 700;
+    transition: all 0.25s ease;
+}
+
+.cart > button:hover,
+button[type="submit"]:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(255, 77, 31, 0.28);
+}
+
+
+/* =========================================================
+   LOGIN / REGISTER
+========================================================= */
+
+.register {
+    width: min(450px, 92%);
+    margin: 65px auto;
+    padding: 42px 36px;
+    background: white;
+    border-radius: 22px;
+    box-shadow: 0 12px 40px rgba(15, 23, 42, 0.1);
+    border: 1px solid #eef2f7;
+}
+
+.register h2 {
+    font-size: 31px;
+    margin: 0 0 28px;
+    color: #0f172a;
+    font-weight: 800;
+}
+
+.register input {
+    width: 100%;
+    padding: 14px 16px;
+    margin: 8px 0;
+    border: 1px solid #dbe2ea;
+    border-radius: 11px;
+    font-size: 15px;
+    outline: none;
+    transition: all 0.2s ease;
+}
+
+.register input:focus {
+    border-color: #ff5a2f;
+    box-shadow: 0 0 0 4px rgba(255, 90, 47, 0.1);
+}
+
+.register button {
+    width: 100%;
+    margin-top: 16px;
+    background: linear-gradient(135deg, #ff6b35, #ff3d00);
+    color: white;
+    border: none;
+    padding: 14px 30px;
+    border-radius: 11px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 700;
+    transition: all 0.25s ease;
+}
+
+.register button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(255, 77, 31, 0.28);
+}
+
+
+/* =========================================================
+   ORDERS
+========================================================= */
+
+.orders {
+    max-width: 900px;
+    width: 92%;
+    margin: 50px auto;
+}
+
+.orders h2 {
+    font-size: 36px;
+    color: #0f172a;
+    margin-bottom: 30px;
+}
+
+.order-card {
+    background: white;
+    padding: 24px;
+    margin: 18px 0;
+    border-radius: 18px;
+    border: 1px solid #eef2f7;
+    box-shadow: 0 6px 22px rgba(15, 23, 42, 0.07);
+    text-align: left;
+}
+
+.order-card h3 {
+    margin-top: 0;
+    color: #0f172a;
+}
+
+.order-card p {
+    color: #64748b;
+}
+
+.status {
+    display: inline-block;
+    padding: 6px 13px;
+    border-radius: 20px;
+    background: #fff3e9;
+    color: #e64a19;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   ADMIN
+========================================================= */
+
+.admin {
+    max-width: 1100px;
+    width: 94%;
+    margin: 45px auto;
+}
+
+.admin h2 {
+    font-size: 36px;
+    color: #0f172a;
+    margin-bottom: 30px;
+}
+
+.admin-card {
+    background: white;
+    border: 1px solid #eef2f7;
+    border-radius: 18px;
+    padding: 24px;
+    margin: 18px 0;
+    box-shadow: 0 6px 22px rgba(15, 23, 42, 0.07);
+}
+
+
+/* =========================================================
+   FORMS
+========================================================= */
+
+input,
+select,
+textarea {
+    font-family: inherit;
+}
+
+input,
+select,
+textarea {
+    border: 1px solid #dbe2ea;
+    border-radius: 10px;
+    padding: 12px 14px;
+    outline: none;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: #ff6b35;
+    box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.1);
+}
+
+
+/* =========================================================
+   LINKS
+========================================================= */
+
+a {
+    color: #ff4d1f;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+a:hover {
+    color: #e63e12;
+    text-decoration: underline;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 768px) {
+
+    header {
+        padding: 17px 12px;
+    }
+
+    header h1 {
+        font-size: 26px;
+    }
+
+    nav {
+        gap: 4px;
+    }
+
+    nav button {
+        padding: 9px 13px;
+        font-size: 13px;
+    }
+
+    .welcome {
+        padding: 50px 18px 40px;
+    }
+
+    .welcome h2 {
+        font-size: 33px;
+    }
+
+    .welcome p {
+        font-size: 16px;
+    }
+
+    .menu {
+        padding: 35px 15px 55px;
+    }
+
+    .menu > h2 {
+        font-size: 29px;
+    }
+
+    .food-container {
+        gap: 20px;
+    }
+
+    .food-card {
+        width: min(350px, 94%);
+    }
+
+    .food-card img {
+        height: 205px;
+    }
+
+    .cart {
+        padding: 35px 12px 60px;
+    }
+
+    .cart h2 {
+        font-size: 29px;
+    }
+
+    .cart-item {
+        width: 94%;
+    }
+
+    .delivery-address {
+        width: 94%;
+    }
+
+    .register {
+        margin: 40px auto;
+        padding: 32px 23px;
+    }
+
+    .orders {
+        width: 94%;
+        margin: 35px auto;
+    }
+
+    .orders h2 {
+        font-size: 29px;
+    }
+
+    .admin {
+        width: 94%;
+    }
+}
+
+
+/* =========================================================
+   SMALL PHONES
+========================================================= */
+
+@media (max-width: 480px) {
+
+    header h1 {
+        font-size: 23px;
+    }
+
+    nav button {
+        padding: 8px 10px;
+        font-size: 12px;
+    }
+
+    .welcome h2 {
+        font-size: 28px;
+    }
+
+    .food-card {
+        width: 95%;
+    }
+
+    .food-card img {
+        height: 195px;
+    }
+
+    .register {
+        width: 94%;
+        padding: 30px 18px;
+    }
+}
+

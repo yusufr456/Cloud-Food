@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Cart - Cloud Food Ordering</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+    <header>
+        <h1>🛒 Your Cart</h1>
+    </header>
+
+    <section class="cart">
+
+        <h2>Cart Items</h2>
+
+        <div id="cart-items"></div>
+
+        <h3 id="cart-total">Total: ₹0</h3>
+
+
+        <!-- DELIVERY ADDRESS -->
+
+        <h2>📍 Delivery Address</h2>
+
+        <textarea
+            id="delivery-address"
+            rows="5"
+            placeholder="Enter your complete delivery address"
+            required></textarea>
+
+        <br><br>
+
+        <button onclick="placeOrder()">
+            Place Order
+        </button>
+
+    </section>
+
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+</body>
+
+</html>
